@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/02b685e7-a29d-480f-95e7-ac06bedd42f1/resourceGroups/IST440W-002-SP22-Team2/providers/Microsoft.Web/sites/decrypttranslateapi",
+    "appService.deploySubpath": "src"
+}
