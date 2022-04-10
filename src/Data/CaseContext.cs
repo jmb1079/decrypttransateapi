@@ -1,12 +1,13 @@
+using DecryptTranslateApi.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DecryptTranslateApi.Models {
+namespace DecryptTranslateApi.Data {
     public class CaseContext : DbContext {
         public CaseContext(DbContextOptions<CaseContext> options)
             : base(options)
         {
         } 
 
-        public DbSet<CaseItem> caseItems {get; set;} =null!;
+        public DbSet<Case> Cases {get; set;} =null!;
     }
 }

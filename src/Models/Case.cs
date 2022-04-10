@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DecryptTranslateApi.Models {
-    public class CaseItem {
+   [Table("Case")]
+    public class Case {
         [Key]
         public int Number {get; set;}
         public string Organization {get; set;} = String.Empty;

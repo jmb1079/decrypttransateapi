@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using DecryptTranslateApi.Data;
 using DecryptTranslateApi.Models;
 
 namespace DecryptTranslateApi.Controllers
@@ -23,16 +24,16 @@ namespace DecryptTranslateApi.Controllers
 
         // GET: api/Case
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CaseItem>>> GetcaseItems()
+        public async Task<ActionResult<IEnumerable<Case>>> GetcaseItems()
         {
-            return await _context.caseItems.ToListAsync();
+            return await _context.Cases.ToListAsync();
         }
 
         // GET: api/Case/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CaseItem>> GetCaseItem(int id)
+        public async Task<ActionResult<Case>> GetCaseItem(int id)
         {
-            var caseItem = await _context.caseItems.FindAsync(id);
+            var caseItem = await _context.Cases.FindAsync(id);
 
             if (caseItem == null)
             {
@@ -45,7 +46,7 @@ namespace DecryptTranslateApi.Controllers
         // PUT: api/Case/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCaseItem(int id, CaseItem caseItem)
+        public async Task<IActionResult> PutCaseItem(int id, Case caseItem)
         {
             if (id != caseItem.Number)
             {
@@ -76,9 +77,9 @@ namespace DecryptTranslateApi.Controllers
         // POST: api/Case
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CaseItem>> PostCaseItem(CaseItem caseItem)
+        public async Task<ActionResult<Case>> PostCaseItem(Case caseItem)
         {
-            _context.caseItems.Add(caseItem);
+            _context.Cases.Add(caseItem);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetCaseItem), new { id = caseItem.Number }, caseItem);
@@ -88,13 +89,13 @@ namespace DecryptTranslateApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCaseItem(int id)
         {
-            var caseItem = await _context.caseItems.FindAsync(id);
+            var caseItem = await _context.Cases.FindAsync(id);
             if (caseItem == null)
             {
                 return NotFound();
             }
 
-            _context.caseItems.Remove(caseItem);
+            _context.Cases.Remove(caseItem);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +103,7 @@ namespace DecryptTranslateApi.Controllers
 
         private bool CaseItemExists(int id)
         {
-            return _context.caseItems.Any(e => e.Number == id);
+            return _context.Cases.Any(e => e.Number == id);
         }
     }
 }
