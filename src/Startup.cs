@@ -20,6 +20,8 @@ namespace DecryptTranslateApi
             services.Configure<AzureFileLoggerOptions>(Configuration.GetSection("AzureLogging"));
             services.AddDbContext<CaseContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
+            services.AddDbContext<OrganizationContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
             
             //services.AddSwaggerGen();
         }

@@ -6,7 +6,7 @@ namespace DecryptTranslateApi.Models {
     public class Case {
         [Key]
         public int Number {get; set;}
-        public string Organization {get; set;} = String.Empty;
+        public int Organization {get; set;}
         public string UserId {get; set;} = String.Empty;
 
     }
