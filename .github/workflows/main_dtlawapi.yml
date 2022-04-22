@@ -53,7 +53,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'decrypttranslateapi'
+          app-name: 'dtlawapi'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_92CDA348C88C47E8A3E3443B4DBB7F3C }}
           package: .
