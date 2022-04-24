@@ -5,10 +5,10 @@ namespace DecryptTranslateApi.Models {
    [Table("Image")]
     public class Image {
         [Key]
-        public int Guid {get; set;}
-        public int Organization {get; set;}
-        public string UserId {get; set;} = String.Empty;
-        public DateTime UploadedTime { get; set; }
+        public int Id { get; set; }
+        public Guid Guid {get; set;}
+        public int Case {get; set;}
+        public string Container {get; set;}
 
     }
 }
