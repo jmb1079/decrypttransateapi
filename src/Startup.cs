@@ -22,6 +22,8 @@ namespace DecryptTranslateApi
                     options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
             services.AddDbContext<OrganizationContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
+            services.AddDbContext<InvestigatorContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
             
             //services.AddSwaggerGen();
         }

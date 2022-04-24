@@ -8,6 +8,6 @@ namespace DecryptTranslateApi.Data {
         {
         } 
 
-        public DbSet<Organization> Cases {get; set;} =null!;
+        public DbSet<Organization> Organizations {get; set;} =null!;
     }
 }

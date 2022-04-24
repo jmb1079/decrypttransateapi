@@ -18,9 +18,9 @@ namespace DecryptTranslateApi.Controllers
 
         // GET: api/organization
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Organization>>> GetcaseItems()
+        public async Task<ActionResult<IEnumerable<Organization>>> GetOrganizationItems()
         {
-            return await _context.Cases.ToListAsync();
+            return await _context.Organizations.ToListAsync();
         }
     }
 }

@@ -2,12 +2,13 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DecryptTranslateApi.Models {
-   [Table("Case")]
-    public class Case {
+   [Table("Image")]
+    public class Image {
         [Key]
-        public int Number {get; set;}
+        public int Guid {get; set;}
         public int Organization {get; set;}
-        public string PrimaryInvestigator {get; set;} = String.Empty;
+        public string UserId {get; set;} = String.Empty;
+        public DateTime UploadedTime { get; set; }
 
     }
 }

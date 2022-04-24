@@ -24,7 +24,7 @@ namespace DecryptTranslateApi.Controllers
 
         // GET: api/Case
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Case>>> GetcaseItems()
+        public async Task<ActionResult<IEnumerable<Case>>> GetCaseItems()
         {
             return await _context.Cases.ToListAsync();
         }
