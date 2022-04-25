@@ -22,5 +22,18 @@ namespace DecryptTranslateApi.Controllers
         {
             return await _context.Investigators.ToListAsync();
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Investigator>> GetInvestigator(int id)
+        {
+            var investigator = await _context.Investigators.FindAsync(id);
+
+            if (investigator == null)
+            {
+                return NotFound();
+            }
+
+            return investigator;
+        }
     }
 }
